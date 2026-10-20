@@ -1,0 +1,28 @@
+### measure-tests
+tests/test_measure.py::TestMeasure::test_box_volume_and_bbox_binary_and_ascii PASSED [ 20%]
+tests/test_measure.py::TestMeasure::test_circle_fit PASSED               [ 40%]
+tests/test_measure.py::TestMeasure::test_bracket_features_from_vertices PASSED [ 60%]
+tests/test_measure.py::TestMeasure::test_score_against_spec PASSED       [ 80%]
+tests/test_measure.py::TestMeasure::test_analytic_volume PASSED          [100%]
+============================== 5 passed in 0.09s ===============================
+### freecad-tests
+tests/test_freecad.py::test_0_versions PASSED                            [ 12%]
+tests/test_freecad.py::test_1_documented_tools PASSED                    [ 25%]
+tests/test_freecad.py::test_2_reference_bracket_via_execute_code[80] PASSED [ 37%]
+tests/test_freecad.py::test_2_reference_bracket_via_execute_code[100] PASSED [ 50%]
+tests/test_freecad.py::test_3_step_reread_by_freecadcmd PASSED           [ 62%]
+tests/test_freecad.py::test_4_get_view_returns_a_png PASSED              [ 75%]
+tests/test_fc_failed_script.py::test_first_program_fails_with_a_null_shape PASSED [ 87%]
+tests/test_fc_failed_script.py::test_nothing_is_undone PASSED            [100%]
+============================== 8 passed in 3.11s ===============================
+### solidcraft-tests
+tests/test_solidcraft.py::test_0_version PASSED                          [ 11%]
+tests/test_solidcraft.py::test_1_tools PASSED                            [ 22%]
+tests/test_solidcraft.py::test_2_reference_batch_builds_the_bracket PASSED [ 33%]
+tests/test_solidcraft.py::test_3_set_parameter_keeps_holes_centred PASSED [ 44%]
+tests/test_solidcraft.py::test_4_step_reread_matches PASSED              [ 55%]
+tests/test_solidcraft.py::test_5_export_outside_allowed_folder_is_refused PASSED [ 66%]
+tests/test_sc_noop_cut.py::test_replay_up_to_the_cut_matches_the_log PASSED [ 77%]
+tests/test_sc_noop_cut.py::test_why_the_cut_missed PASSED                [ 88%]
+tests/test_sc_noop_cut.py::test_the_agents_fix_makes_the_holes PASSED    [100%]
+============================== 9 passed in 1.00s ===============================

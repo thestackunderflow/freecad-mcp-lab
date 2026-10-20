@@ -1,0 +1,73 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+____________ TestMeasure.test_box_volume_and_bbox_binary_and_ascii _____________
+
+self = <test_measure.TestMeasure object at 0x726b9eaed490>
+
+    def test_box_volume_and_bbox_binary_and_ascii(self):
+        for binary in (True, False):
+            p = os.path.join(tempfile.mkdtemp(), 'b.stl')
+            write_stl(p, box_tris(0, 0, 0, 80, 60, 4), binary)
+>           tris = measure.read_stl(p)
+                   ^^^^^^^^^^^^^^^^
+E           AttributeError: module 'measure' has no attribute 'read_stl'
+
+tests/test_measure.py:38: AttributeError
+_________________________ TestMeasure.test_circle_fit __________________________
+
+self = <test_measure.TestMeasure object at 0x726b9eb8a000>
+
+    def test_circle_fit(self):
+        pts = [(30 + 2.5 * math.cos(a), 35 + 2.5 * math.sin(a)) for a in np.linspace(0, 2 * math.pi, 24, endpoint=False)]
+>       cx, cz, d = measure.fit_circle(np.array(pts))
+                    ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'fit_circle'
+
+tests/test_measure.py:44: AttributeError
+_______________ TestMeasure.test_bracket_features_from_vertices ________________
+
+self = <test_measure.TestMeasure object at 0x726b6a3726c0>
+
+    def test_bracket_features_from_vertices(self):
+        # Two plates (no holes in the mesh) plus hole-edge vertices injected as degenerate triangles on the y=0 face.
+        W = 80
+        tris = box_tris(0, 0, 0, W, 60, 4) + box_tris(0, 0, 4, W, 4, 50)
+        for cx in (W / 2 - 20, W / 2 + 20):
+            ring = [(cx + 2.5 * math.cos(a), 0.0, 35 + 2.5 * math.sin(a)) for a in np.linspace(0, 2 * math.pi, 32, endpoint=False)]
+            for i in range(len(ring)):
+                tris.append(np.array([ring[i], ring[(i + 1) % len(ring)], ring[i]]))
+>       m = measure.bracket(tris)
+            ^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'bracket'
+
+tests/test_measure.py:55: AttributeError
+_____________________ TestMeasure.test_score_against_spec ______________________
+
+self = <test_measure.TestMeasure object at 0x726b6a373350>
+
+    def test_score_against_spec(self):
+        ok = {'width': 80, 'depth': 60, 'height': 50, 'base_thickness': 4, 'back_thickness': 4,
+              'hole_diameters': [5, 5], 'hole_spacing': 40, 'hole_height': 35, 'holes_offset_from_centre': 0,
+              'volume': 33762.9}
+>       s = measure.score(ok, 80)
+            ^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'score'
+
+tests/test_measure.py:66: AttributeError
+_______________________ TestMeasure.test_analytic_volume _______________________
+
+self = <test_measure.TestMeasure object at 0x726b6a3735c0>
+
+    def test_analytic_volume(self):
+>       assert abs(measure.spec_volume(80) - 33762.92) < 0.01
+                   ^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'measure' has no attribute 'spec_volume'
+
+tests/test_measure.py:73: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_measure.py::TestMeasure::test_box_volume_and_bbox_binary_and_ascii
+FAILED tests/test_measure.py::TestMeasure::test_circle_fit - AttributeError: ...
+FAILED tests/test_measure.py::TestMeasure::test_bracket_features_from_vertices
+FAILED tests/test_measure.py::TestMeasure::test_score_against_spec - Attribut...
+FAILED tests/test_measure.py::TestMeasure::test_analytic_volume - AttributeEr...
+5 failed in 0.20s

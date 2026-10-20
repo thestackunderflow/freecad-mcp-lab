@@ -1,0 +1,1 @@
+{"mcpServers": {"freecad": {"command": "docker", "args": ["run", "-i", "--rm", "-v", "$LAB/proxy:/proxy:ro", "-v", "$LAB/out/runs/freecad-3:/lab/out", "freecad-mcp-lab:1.1.4", "/opt/mcp/bin/python3", "/proxy/mcp_log_proxy.py", "--log", "/lab/out/transcript.jsonl", "--png-dir", "/lab/out", "--", "freecad-mcp", "--only-text-feedback"]}}}

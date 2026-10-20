@@ -1,0 +1,25 @@
+# Every test runs in a container; nothing is installed on the host. Results: out/.
+services:
+  measure-tests:   # the STL measurer on synthetic meshes
+    image: freecad-mcp-lab-solidcraft:0.16.2
+    volumes: [".:/work"]
+    working_dir: /work
+    command: ["python3", "-m", "pytest", "-v", "-p", "no:cacheprovider", "tests/test_measure.py"]
+  freecad-tests:   # FreeCAD 1.1.4 + freecad-mcp 0.1.27: server, tools, reference bracket, STEP re-read, failed-script replay
+    build: ./freecad
+    image: freecad-mcp-lab:1.1.4
+    volumes: [".:/work", "./out/lab-out:/lab/out"]
+    working_dir: /work
+    command: ["/usr/bin/python3", "-m", "pytest", "-v", "-p", "no:cacheprovider", "tests/test_freecad.py", "tests/test_fc_failed_script.py"]
+  solidcraft-tests:   # SolidCraft 0.16.2: server, tools, reference bracket + set_parameter, no-op cut replay
+    build: ./solidcraft
+    image: freecad-mcp-lab-solidcraft:0.16.2
+    volumes: [".:/work", "./out/lab-out:/lab/out"]
+    working_dir: /work
+    command: ["python3", "-m", "pytest", "-v", "-p", "no:cacheprovider", "tests/test_solidcraft.py", "tests/test_sc_noop_cut.py"]
+  score:   # scores every agent run in out/runs/ (NumPy for STL, freecadcmd for STEP)
+    image: freecad-mcp-lab:1.1.4
+    entrypoint: ["/usr/bin/python3"]
+    volumes: [".:/work"]
+    working_dir: /work
+    command: ["claude-run/score.py"]

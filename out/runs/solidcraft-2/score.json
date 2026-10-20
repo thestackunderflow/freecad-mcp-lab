@@ -1,0 +1,111 @@
+{
+ "arm": "solidcraft",
+ "run": "2",
+ "model": "claude-sonnet-5-5",
+ "exit": 0,
+ "wall_s": 27,
+ "claude_version": "2.1.303 (Claude Code)",
+ "cost_usd": 0.11101319999999999,
+ "num_turns": 16,
+ "is_error": false,
+ "models_used": [
+  "claude-sonnet-5-5"
+ ],
+ "tool_calls": 14,
+ "tools_used": [
+  "batch",
+  "body_topology",
+  "export",
+  "list_commands",
+  "measure",
+  "set_parameter"
+ ],
+ "failed_calls": 1,
+ "failures": [
+  {
+   "seq": 19,
+   "tool": "batch",
+   "text": "{\n  \"completed\": 0,\n  \"failed\": {\n    \"command\": \"solid.box\",\n    \"error\": \"invalid parameters for `solid.box`: length: expression: unknown parameter `width`\",\n    \"index\": 0\n  },\n  \"ok\": false,\n  \"results\": [],\n  \"rolled_back\": true,\n  \"undone\": 0\n}"
+  }
+ ],
+ "final_answer": "The bracket is modelled and all four exports succeeded. No step failed, apart from one early retry described below.\n\n**Model:** the base plate is a box `width` \u00d7 60 \u00d7 4. The back plate is a box `width` \u00d7 4 \u00d7 50, joined to the base at the corner. The two \u00d85 holes are cylinders cut along Y through the back plate at Z = 35. They sit at X = `width/2 \u2212 20` and `width/2 + 20`, so they stay 40 mm apart and centred when the width changes.\n\nThe first batch failed because `width` wasn't defined yet. It rolled back with no changes, I created the parameter, and the rerun succeeded.\n\n**Exports and bounding boxes (mm):**\n\n| Width | Files | Bounding box min \u2192 max | Hole centres (X, Z) |\n|---|---|---|---|\n| 80 | `/lab/out/bracket-80.step`, `/lab/out/bracket-80.stl` | (0, 0, 0) \u2192 (80, 60, 50) | (20, 35) and (60, 35) |\n| 100 | `/lab/out/bracket-100.step`, `/lab/out/bracket-100.stl` | (0, 0, 0) \u2192 (100, 60, 50) | (30, 35) and (70, 35) |\n\nI read the 80 mm box from `measure` and the hole centres from `body_topology`. For 100 mm I only checked `body_topology` (edges and cylinder origins), not `measure`, so its bounding box comes from the edge coordinates: X up to 100, Y up to 60, Z up to 50. Changing the parameter recomputed all 4 features without errors.\n\nThe two STL files are both 20,284 bytes. I expected that, because both have the same face and triangle counts. I didn't open the exported files.",
+ "w80": {
+  "measured": {
+   "width": 80.0,
+   "depth": 60.0,
+   "height": 50.0,
+   "base_thickness": 4.0,
+   "back_thickness": 4.0,
+   "volume": 33764.0504,
+   "triangles": 404,
+   "holes_found": 2,
+   "hole_diameters": [
+    5.0,
+    5.0
+   ],
+   "hole_spacing": 40.0,
+   "hole_height": 35.0,
+   "holes_offset_from_centre": -0.0
+  },
+  "score": {
+   "pass": true,
+   "failures": []
+  }
+ },
+ "w80_step": {
+  "file": "/work/out/runs/solidcraft-2/bracket-80.step",
+  "size": [
+   80.0,
+   60.0,
+   50.0
+  ],
+  "min": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "volume": 33762.9204,
+  "solids": 1
+ },
+ "w100": {
+  "measured": {
+   "width": 100.0,
+   "depth": 60.0,
+   "height": 50.0,
+   "base_thickness": 4.0,
+   "back_thickness": 4.0,
+   "volume": 42244.0504,
+   "triangles": 404,
+   "holes_found": 2,
+   "hole_diameters": [
+    5.0,
+    5.0
+   ],
+   "hole_spacing": 40.0,
+   "hole_height": 35.0,
+   "holes_offset_from_centre": 0.0
+  },
+  "score": {
+   "pass": true,
+   "failures": []
+  }
+ },
+ "w100_step": {
+  "file": "/work/out/runs/solidcraft-2/bracket-100.step",
+  "size": [
+   100.0,
+   60.0,
+   50.0
+  ],
+  "min": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "volume": 42242.9204,
+  "solids": 1
+ },
+ "change_method": "set_parameter",
+ "pass_80": true,
+ "pass_100": true
+}

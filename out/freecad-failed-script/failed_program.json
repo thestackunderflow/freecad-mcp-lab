@@ -1,0 +1,9 @@
+{
+ "content": [
+  {
+   "text": "Failed to execute code: OCCError: 19Standard_NullObject BRepCheck_Analyzer::Init() - NULL shape",
+   "type": "text"
+  }
+ ],
+ "isError": true
+}

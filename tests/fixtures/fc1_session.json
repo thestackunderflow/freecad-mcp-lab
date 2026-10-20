@@ -1,0 +1,25 @@
+{
+ "source": "out/runs/freecad-1/transcript.jsonl (clean run, 19 Oct 2026): seq 18 the first program (NULL shape), seq 20 the listing",
+ "calls": [
+  {
+   "seq": 18,
+   "tool": "execute_code",
+   "arguments": {
+    "code": "import FreeCAD, Part, os, Mesh\ndoc = FreeCAD.newDocument(\"Bracket\")\nss = doc.addObject(\"Spreadsheet::Sheet\",\"Params\")\nss.set(\"A1\",\"Width\"); ss.set(\"B1\",\"80\"); ss.setAlias(\"B1\",\"Width\")\ndoc.recompute()\nbase = doc.addObject(\"Part::Box\",\"BasePlate\")\nbase.Width=60; base.Height=4; base.setExpression(\"Length\",\"Params.Width\")\nback = doc.addObject(\"Part::Box\",\"BackPlate\")\nback.Width=4; back.Height=50; back.setExpression(\"Length\",\"Params.Width\")\nfuse = doc.addObject(\"Part::Fuse\",\"Bracket\"); fuse.Base=base; fuse.Tool=back\nholes=[]\nfor i,s in enumerate((\"-\",\"+\")):\n    c = doc.addObject(\"Part::Cylinder\",\"Hole%d\"%(i+1))\n    c.Radius=2.5; c.Height=6\n    c.Placement = FreeCAD.Placement(FreeCAD.Vector(0,-1,35), FreeCAD.Rotation(FreeCAD.Vector(1,0,0),-90))\n    c.setExpression(\"Placement.Base.x\",\"Params.Width / 2 %s 20 mm\"%s)\n    holes.append(c)\nhf = doc.addObject(\"Part::MultiFuse\",\"Holes\"); hf.Shapes=holes\ncut = doc.addObject(\"Part::Cut\",\"WallBracket\"); cut.Base=fuse; cut.Tool=hf\ndoc.recompute()\nos.makedirs(\"/lab/out\", exist_ok=True)\ndef export(tag):\n    s=cut.Shape; bb=s.BoundBox\n    print(tag,\"valid\",s.isValid(),\"vol\",round(s.Volume,2),\"BB\",bb.XMin,bb.YMin,bb.ZMin,bb.XMax,bb.YMax,bb.ZMax)\n    for ext in (\"step\",\"stl\"):\n        p=\"/lab/out/bracket-%s.%s\"%(tag,ext)\n        try:\n            if ext==\"step\": Part.export([cut],p)\n            else: Mesh.export([cut],p)\n            print(\"ok\",p,os.path.getsize(p))\n        except Exception as e: print(\"FAIL\",p,e)\nexport(\"80\")\nss.set(\"B1\",\"100\"); doc.recompute()\nexport(\"100\")\nprint([ (h.Label,h.Placement.Base.x) for h in holes])",
+    "include_screenshot": false
+   },
+   "reply_is_error": true,
+   "reply_text": "Failed to execute code: OCCError: 19Standard_NullObject BRepCheck_Analyzer::Init() - NULL shape"
+  },
+  {
+   "seq": 20,
+   "tool": "execute_code",
+   "arguments": {
+    "code": "doc=FreeCAD.getDocument(\"Bracket\")\nfor o in doc.Objects: print(o.Name,o.State,o.isValid(), getattr(o,'ExpressionEngine',None))",
+    "include_screenshot": false
+   },
+   "reply_is_error": false,
+   "reply_text": "Code executed successfully: Python code executed successfully.\nOutput: Params ['Up-to-date'] True []\nBasePlate ['Up-to-date'] True [('Length', 'Params.Width')]\nBackPlate ['Up-to-date'] True [('Length', 'Params.Width')]\nBracket ['Up-to-date'] True []\nHole1 ['Touched', 'Invalid'] False [('.Placement.Base.x', 'Params.Width / 2 - 20 mm')]\nHole2 ['Touched', 'Invalid'] False [('.Placement.Base.x', 'Params.Width / 2 + 20 mm')]\nHoles ['Touched', 'Expanded'] True []\nWallBracket ['Touched', 'Expanded'] True []\n"
+  }
+ ]
+}

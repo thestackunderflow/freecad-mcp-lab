@@ -1,0 +1,38 @@
+{
+ "area_mm2": 18495.131717034223,
+ "bbox": {
+  "max": [
+   80.0,
+   60.0,
+   50.0
+  ],
+  "min": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "center_of_mass": [
+  40.00000000000002,
+  17.922780929549404,
+  12.746018081796445
+ ],
+ "density_g_cm3": 1.29,
+ "edges": 22,
+ "face_types": {
+  "cylinder": 2,
+  "plane": 8
+ },
+ "faces": 10,
+ "kernel": {
+  "edges": 30,
+  "faces": 12,
+  "shells": 1,
+  "vertices": 20
+ },
+ "mass_g": 43.55420093188616,
+ "material": "Default",
+ "name": "Bracket",
+ "vertices": 16,
+ "volume_mm3": 33762.94645882648
+}

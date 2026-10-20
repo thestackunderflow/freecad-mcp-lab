@@ -1,0 +1,559 @@
+{
+ "source": "out/runs/solidcraft-3/transcript.jsonl (clean run, 19 Oct 2026): every state-changing call, in order",
+ "noop_cut_seq": 30,
+ "calls": [
+  {
+   "seq": 16,
+   "tool": "batch",
+   "arguments": {
+    "commands": [
+     {
+      "command": "set_parameter",
+      "params": {
+       "name": "width",
+       "value": 80
+      }
+     },
+     {
+      "command": "solid.box",
+      "params": {
+       "length": "width",
+       "width": 60,
+       "height": 4,
+       "corner": [
+        0,
+        0,
+        0
+       ],
+       "body_name": "Bracket"
+      }
+     },
+     {
+      "command": "solid.box",
+      "params": {
+       "length": "width",
+       "width": 4,
+       "height": 50,
+       "corner": [
+        0,
+        0,
+        0
+       ],
+       "operation": "join",
+       "targets": [
+        "Bracket"
+       ]
+      }
+     },
+     {
+      "command": "sketch.create",
+      "params": {
+       "plane": "XZ"
+      }
+     },
+     {
+      "command": "sketch.circle.center",
+      "params": {
+       "center": [
+        "width/2-20",
+        35
+       ],
+       "radius": 2.5
+      }
+     },
+     {
+      "command": "sketch.circle.center",
+      "params": {
+       "center": [
+        "width/2+20",
+        35
+       ],
+       "radius": 2.5
+      }
+     },
+     {
+      "command": "sketch.finish",
+      "params": {}
+     }
+    ]
+   },
+   "reply_is_error": true,
+   "reply_text": "{\n  \"completed\": 0,\n  \"failed\": {\n    \"command\": \"set_parameter\",\n    \"error\": \"unknown command `set_parameter`\",\n    \"index\": 0\n  },\n  \"ok\": false,\n  \"results\": [],\n  \"rolled_back\": true,\n  \"undone\": 0\n}"
+  },
+  {
+   "seq": 18,
+   "tool": "set_parameter",
+   "arguments": {
+    "name": "width",
+    "value": 80,
+    "unit": "mm"
+   },
+   "reply_is_error": false,
+   "reply_text": "{\n  \"display_value\": 80.0,\n  \"errors\": [],\n  \"expression\": \"80\",\n  \"name\": \"width\",\n  \"recomputed\": 0,\n  \"restored\": 0,\n  \"value\": 80.0\n}"
+  },
+  {
+   "seq": 20,
+   "tool": "batch",
+   "arguments": {
+    "commands": [
+     {
+      "command": "solid.box",
+      "params": {
+       "length": "width",
+       "width": 60,
+       "height": 4,
+       "corner": [
+        0,
+        0,
+        0
+       ],
+       "body_name": "Bracket"
+      }
+     },
+     {
+      "command": "solid.box",
+      "params": {
+       "length": "width",
+       "width": 4,
+       "height": 50,
+       "corner": [
+        0,
+        0,
+        0
+       ],
+       "operation": "join",
+       "targets": [
+        "Bracket"
+       ]
+      }
+     },
+     {
+      "command": "sketch.create",
+      "params": {
+       "plane": "XZ"
+      }
+     },
+     {
+      "command": "sketch.circle.center",
+      "params": {
+       "center": [
+        "width/2-20",
+        35
+       ],
+       "radius": 2.5
+      }
+     },
+     {
+      "command": "sketch.circle.center",
+      "params": {
+       "center": [
+        "width/2+20",
+        35
+       ],
+       "radius": 2.5
+      }
+     },
+     {
+      "command": "sketch.finish",
+      "params": {}
+     }
+    ]
+   },
+   "reply_is_error": true,
+   "reply_text": "{\n  \"completed\": 3,\n  \"failed\": {\n    \"command\": \"sketch.circle.center\",\n    \"error\": \"invalid parameters for `sketch.circle.center`: a point must be [x, y], a point id like \\\"l1.end\\\", or {at, ref}\",\n    \"index\": 3\n  },\n  \"ok\": false,\n  \"results\": [\n    {\n      \"bodies\": [\n        \"Bracket\"\n      ],\n      \"changed_bodies\": [],\n      \"created_bodies\": [\n        \"Bracket\"\n      ],\n      \"feature\": 1,\n      \"ms\": 3.983943,\n      \"name\": \"Box1\",\n      \"removed_bodies\": [],\n      \"warning\": null\n    },\n    {\n      \"bodies\": [\n        \"Bracket\"\n      ],\n      \"changed_bodies\": [\n        \"Bracket\"\n      ],\n      \"created_bodies\": [],\n      \"feature\": 2,\n      \"ms\": 30.795593999999998,\n      \"name\": \"Box2\",\n      \"removed_bodies\": [],\n      \"warning\": null\n    },\n    {\n      \"attachment\": \"fixed\",\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [],\n        \"points\": []\n      },\n      \"name\": \"Sketch1\",\n      \"projected\": null,\n      \"sketch\": 3\n    }\n  ],\n  \"rolled_back\": true,\n  \"undone\": 3\n}"
+  },
+  {
+   "seq": 22,
+   "tool": "batch",
+   "arguments": {
+    "commands": [
+     {
+      "command": "solid.box",
+      "params": {
+       "length": "width",
+       "width": 60,
+       "height": 4,
+       "corner": [
+        0,
+        0,
+        0
+       ],
+       "body_name": "Bracket"
+      }
+     },
+     {
+      "command": "solid.box",
+      "params": {
+       "length": "width",
+       "width": 4,
+       "height": 50,
+       "corner": [
+        0,
+        0,
+        0
+       ],
+       "operation": "join",
+       "targets": [
+        "Bracket"
+       ]
+      }
+     },
+     {
+      "command": "sketch.create",
+      "params": {
+       "plane": "XZ"
+      }
+     },
+     {
+      "command": "sketch.circle.center",
+      "params": {
+       "center": [
+        20,
+        35
+       ],
+       "radius": 2.5
+      }
+     },
+     {
+      "command": "sketch.circle.center",
+      "params": {
+       "center": [
+        60,
+        35
+       ],
+       "radius": 2.5
+      }
+     }
+    ]
+   },
+   "reply_is_error": false,
+   "reply_text": "{\n  \"completed\": 5,\n  \"ok\": true,\n  \"results\": [\n    {\n      \"bodies\": [\n        \"Bracket\"\n      ],\n      \"changed_bodies\": [],\n      \"created_bodies\": [\n        \"Bracket\"\n      ],\n      \"feature\": 1,\n      \"ms\": 3.983943,\n      \"name\": \"Box1\",\n      \"removed_bodies\": [],\n      \"warning\": null\n    },\n    {\n      \"bodies\": [\n        \"Bracket\"\n      ],\n      \"changed_bodies\": [\n        \"Bracket\"\n      ],\n      \"created_bodies\": [],\n      \"feature\": 2,\n      \"ms\": 30.795593999999998,\n      \"name\": \"Box2\",\n      \"removed_bodies\": [],\n      \"warning\": null\n    },\n    {\n      \"attachment\": \"fixed\",\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [],\n        \"points\": []\n      },\n      \"name\": \"Sketch1\",\n      \"projected\": null,\n      \"sketch\": 3\n    },\n    {\n      \"constraints\": [],\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [\n          \"c1\"\n        ],\n        \"dimensions\": [],\n        \"points\": [\n          \"c1.center\"\n        ]\n      },\n      \"curves\": [\n        \"c1\"\n      ],\n      \"sketch\": {\n        \"dof\": 3,\n        \"solved\": true\n      }\n    },\n    {\n      \"constraints\": [],\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [\n          \"c2\"\n        ],\n        \"dimensions\": [],\n        \"points\": [\n          \"c2.center\"\n        ]\n      },\n      \"curves\": [\n        \"c2\"\n      ],\n      \"sketch\": {\n        \"dof\": 6,\n        \"solved\": true\n      }\n    }\n  ]\n}"
+  },
+  {
+   "seq": 26,
+   "tool": "batch",
+   "arguments": {
+    "commands": [
+     {
+      "command": "sketch.dimension",
+      "params": {
+       "entities": [
+        "c1"
+       ],
+       "type": "diameter",
+       "value": 5
+      }
+     },
+     {
+      "command": "sketch.dimension",
+      "params": {
+       "entities": [
+        "c2"
+       ],
+       "type": "diameter",
+       "value": 5
+      }
+     },
+     {
+      "command": "sketch.dimension",
+      "params": {
+       "entities": [
+        "c1.center",
+        "c2.center"
+       ],
+       "type": "horizontal",
+       "value": 40,
+       "text_at": [
+        40,
+        45
+       ]
+      }
+     },
+     {
+      "command": "sketch.dimension",
+      "params": {
+       "entities": [
+        "origin",
+        "c1.center"
+       ],
+       "type": "vertical",
+       "value": 35,
+       "text_at": [
+        -10,
+        17
+       ]
+      }
+     },
+     {
+      "command": "sketch.dimension",
+      "params": {
+       "entities": [
+        "origin",
+        "c1.center"
+       ],
+       "type": "horizontal",
+       "value": "width/2-20",
+       "text_at": [
+        10,
+        -5
+       ]
+      }
+     }
+    ]
+   },
+   "reply_is_error": false,
+   "reply_text": "{\n  \"completed\": 5,\n  \"ok\": true,\n  \"results\": [\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [\n          \"k1\"\n        ],\n        \"points\": []\n      },\n      \"expression\": \"5\",\n      \"measured\": 5.0,\n      \"param\": \"d7\",\n      \"sketch\": {\n        \"dof\": 5,\n        \"solved\": true\n      },\n      \"type\": \"DiameterDimension\",\n      \"unit\": \"mm\"\n    },\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [\n          \"k2\"\n        ],\n        \"points\": []\n      },\n      \"expression\": \"5\",\n      \"measured\": 5.0,\n      \"param\": \"d8\",\n      \"sketch\": {\n        \"dof\": 4,\n        \"solved\": true\n      },\n      \"type\": \"DiameterDimension\",\n      \"unit\": \"mm\"\n    },\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [\n          \"k3\"\n        ],\n        \"points\": []\n      },\n      \"expression\": \"40\",\n      \"measured\": 40.0,\n      \"param\": \"d9\",\n      \"sketch\": {\n        \"dof\": 3,\n        \"solved\": true\n      },\n      \"type\": \"LinearDimension\",\n      \"unit\": \"mm\"\n    },\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [\n          \"k4\"\n        ],\n        \"points\": []\n      },\n      \"expression\": \"35\",\n      \"measured\": 35.0,\n      \"param\": \"d10\",\n      \"sketch\": {\n        \"dof\": 2,\n        \"solved\": true\n      },\n      \"type\": \"LinearDimension\",\n      \"unit\": \"mm\"\n    },\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [\n          \"k5\"\n        ],\n        \"points\": []\n      },\n      \"expression\": \"width/2-20\",\n      \"measured\": 20.0,\n      \"param\": \"d11\",\n      \"sketch\": {\n        \"dof\": 1,\n        \"solved\": true\n      },\n      \"type\": \"LinearDimension\",\n      \"unit\": \"mm\"\n    }\n  ]\n}"
+  },
+  {
+   "seq": 30,
+   "tool": "batch",
+   "arguments": {
+    "commands": [
+     {
+      "command": "sketch.constraint.horizontal_vertical",
+      "params": {
+       "points": [
+        "c1.center",
+        "c2.center"
+       ],
+       "mode": "horizontal"
+      }
+     },
+     {
+      "command": "sketch.finish",
+      "params": {}
+     },
+     {
+      "command": "solid.extrude",
+      "params": {
+       "distance": 10,
+       "direction": "symmetric",
+       "operation": "cut",
+       "targets": [
+        "Bracket"
+       ]
+      }
+     }
+    ]
+   },
+   "reply_is_error": false,
+   "reply_text": "{\n  \"completed\": 3,\n  \"ok\": true,\n  \"results\": [\n    {\n      \"constraint\": \"k6\",\n      \"created\": {\n        \"constraints\": [\n          \"k6\"\n        ],\n        \"curves\": [],\n        \"dimensions\": [],\n        \"points\": []\n      },\n      \"sketch\": {\n        \"dof\": 0,\n        \"solved\": true\n      }\n    },\n    {\n      \"profiles\": 2,\n      \"sketch\": 3\n    },\n    {\n      \"bodies\": [\n        \"Bracket\"\n      ],\n      \"changed_bodies\": [],\n      \"created_bodies\": [],\n      \"feature\": 4,\n      \"ms\": 23.897431,\n      \"name\": \"Extrude1\",\n      \"removed_bodies\": [],\n      \"warning\": null\n    }\n  ]\n}"
+  },
+  {
+   "seq": 38,
+   "tool": "set_parameter",
+   "arguments": {
+    "name": "d10",
+    "value": -35,
+    "unit": "mm"
+   },
+   "reply_is_error": false,
+   "reply_text": "{\n  \"display_value\": -35.0,\n  \"errors\": [\n    {\n      \"error\": \"invalid value: dimension value -35\",\n      \"feature\": \"Sketch1\"\n    },\n    {\n      \"error\": \"unknown sketch 3 (it must come earlier in the timeline)\",\n      \"feature\": \"Extrude1\"\n    }\n  ],\n  \"expression\": \"-35\",\n  \"name\": \"d10\",\n  \"recomputed\": 2,\n  \"restored\": 0,\n  \"value\": -35.0\n}"
+  },
+  {
+   "seq": 40,
+   "tool": "set_parameter",
+   "arguments": {
+    "name": "d10",
+    "value": 35,
+    "unit": "mm"
+   },
+   "reply_is_error": false,
+   "reply_text": "{\n  \"display_value\": 35.0,\n  \"errors\": [],\n  \"expression\": \"35\",\n  \"name\": \"d10\",\n  \"recomputed\": 0,\n  \"restored\": 2,\n  \"value\": 35.0\n}"
+  },
+  {
+   "seq": 46,
+   "tool": "batch",
+   "arguments": {
+    "commands": [
+     {
+      "command": "sketch.edit",
+      "params": {
+       "sketch": "Sketch1"
+      }
+     },
+     {
+      "command": "sketch.delete",
+      "params": {
+       "entities": [
+        "k4"
+       ]
+      }
+     },
+     {
+      "command": "sketch.dimension",
+      "params": {
+       "entities": [
+        "c1.center",
+        "origin"
+       ],
+       "type": "vertical",
+       "value": 35,
+       "text_at": [
+        -10,
+        17
+       ]
+      }
+     }
+    ]
+   },
+   "reply_is_error": false,
+   "reply_text": "{\n  \"completed\": 3,\n  \"ok\": true,\n  \"results\": [\n    {\n      \"name\": \"Sketch1\",\n      \"sketch\": 3\n    },\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [],\n        \"points\": []\n      },\n      \"deleted\": 1,\n      \"sketch\": {\n        \"dof\": 1,\n        \"solved\": true\n      }\n    },\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [\n          \"k7\"\n        ],\n        \"points\": []\n      },\n      \"expression\": \"35\",\n      \"measured\": 35.0,\n      \"param\": \"d10\",\n      \"sketch\": {\n        \"dof\": 0,\n        \"solved\": true\n      },\n      \"type\": \"LinearDimension\",\n      \"unit\": \"mm\"\n    }\n  ]\n}"
+  },
+  {
+   "seq": 48,
+   "tool": "execute",
+   "arguments": {
+    "command": "sketch.finish",
+    "params": {}
+   },
+   "reply_is_error": false,
+   "reply_text": "{\n  \"profiles\": 2,\n  \"sketch\": 3\n}"
+  },
+  {
+   "seq": 54,
+   "tool": "batch",
+   "arguments": {
+    "commands": [
+     {
+      "command": "sketch.edit",
+      "params": {
+       "sketch": "Sketch1"
+      }
+     },
+     {
+      "command": "sketch.delete",
+      "params": {
+       "entities": [
+        "c1",
+        "c2"
+       ]
+      }
+     },
+     {
+      "command": "sketch.circle.center",
+      "params": {
+       "center": [
+        20,
+        -35
+       ],
+       "radius": 2.5
+      }
+     },
+     {
+      "command": "sketch.circle.center",
+      "params": {
+       "center": [
+        60,
+        -35
+       ],
+       "radius": 2.5
+      }
+     }
+    ]
+   },
+   "reply_is_error": false,
+   "reply_text": "{\n  \"completed\": 4,\n  \"ok\": true,\n  \"results\": [\n    {\n      \"name\": \"Sketch1\",\n      \"sketch\": 3\n    },\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [],\n        \"points\": []\n      },\n      \"deleted\": 2,\n      \"sketch\": {\n        \"dof\": 0,\n        \"solved\": true\n      }\n    },\n    {\n      \"constraints\": [],\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [\n          \"c3\"\n        ],\n        \"dimensions\": [],\n        \"points\": [\n          \"c3.center\"\n        ]\n      },\n      \"curves\": [\n        \"c3\"\n      ],\n      \"sketch\": {\n        \"dof\": 3,\n        \"solved\": true\n      }\n    },\n    {\n      \"constraints\": [],\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [\n          \"c4\"\n        ],\n        \"dimensions\": [],\n        \"points\": [\n          \"c4.center\"\n        ]\n      },\n      \"curves\": [\n        \"c4\"\n      ],\n      \"sketch\": {\n        \"dof\": 6,\n        \"solved\": true\n      }\n    }\n  ]\n}"
+  },
+  {
+   "seq": 56,
+   "tool": "batch",
+   "arguments": {
+    "commands": [
+     {
+      "command": "sketch.dimension",
+      "params": {
+       "entities": [
+        "c3"
+       ],
+       "type": "diameter",
+       "value": 5
+      }
+     },
+     {
+      "command": "sketch.dimension",
+      "params": {
+       "entities": [
+        "c4"
+       ],
+       "type": "diameter",
+       "value": 5
+      }
+     },
+     {
+      "command": "sketch.dimension",
+      "params": {
+       "entities": [
+        "c3.center",
+        "c4.center"
+       ],
+       "type": "horizontal",
+       "value": 40,
+       "text_at": [
+        40,
+        -45
+       ]
+      }
+     },
+     {
+      "command": "sketch.dimension",
+      "params": {
+       "entities": [
+        "origin",
+        "c3.center"
+       ],
+       "type": "vertical",
+       "value": 35,
+       "text_at": [
+        -10,
+        -17
+       ]
+      }
+     },
+     {
+      "command": "sketch.dimension",
+      "params": {
+       "entities": [
+        "origin",
+        "c3.center"
+       ],
+       "type": "horizontal",
+       "value": "width/2-20",
+       "text_at": [
+        10,
+        5
+       ]
+      }
+     },
+     {
+      "command": "sketch.constraint.horizontal_vertical",
+      "params": {
+       "points": [
+        "c3.center",
+        "c4.center"
+       ],
+       "mode": "horizontal"
+      }
+     },
+     {
+      "command": "sketch.finish",
+      "params": {}
+     }
+    ]
+   },
+   "reply_is_error": false,
+   "reply_text": "{\n  \"completed\": 7,\n  \"ok\": true,\n  \"results\": [\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [\n          \"k8\"\n        ],\n        \"points\": []\n      },\n      \"expression\": \"5\",\n      \"measured\": 5.0,\n      \"param\": \"d7\",\n      \"sketch\": {\n        \"dof\": 5,\n        \"solved\": true\n      },\n      \"type\": \"DiameterDimension\",\n      \"unit\": \"mm\"\n    },\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [\n          \"k9\"\n        ],\n        \"points\": []\n      },\n      \"expression\": \"5\",\n      \"measured\": 5.0,\n      \"param\": \"d8\",\n      \"sketch\": {\n        \"dof\": 4,\n        \"solved\": true\n      },\n      \"type\": \"DiameterDimension\",\n      \"unit\": \"mm\"\n    },\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [\n          \"k10\"\n        ],\n        \"points\": []\n      },\n      \"expression\": \"40\",\n      \"measured\": 40.0,\n      \"param\": \"d9\",\n      \"sketch\": {\n        \"dof\": 3,\n        \"solved\": true\n      },\n      \"type\": \"LinearDimension\",\n      \"unit\": \"mm\"\n    },\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [\n          \"k11\"\n        ],\n        \"points\": []\n      },\n      \"expression\": \"35\",\n      \"measured\": 35.0,\n      \"param\": \"d10\",\n      \"sketch\": {\n        \"dof\": 2,\n        \"solved\": true\n      },\n      \"type\": \"LinearDimension\",\n      \"unit\": \"mm\"\n    },\n    {\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [\n          \"k12\"\n        ],\n        \"points\": []\n      },\n      \"expression\": \"width/2-20\",\n      \"measured\": 20.0,\n      \"param\": \"d11\",\n      \"sketch\": {\n        \"dof\": 1,\n        \"solved\": true\n      },\n      \"type\": \"LinearDimension\",\n      \"unit\": \"mm\"\n    },\n    {\n      \"constraint\": \"k13\",\n      \"created\": {\n        \"constraints\": [\n          \"k13\"\n        ],\n        \"curves\": [],\n        \"dimensions\": [],\n        \"points\": []\n      },\n      \"sketch\": {\n        \"dof\": 0,\n        \"solved\": true\n      }\n    },\n    {\n      \"profiles\": 2,\n      \"sketch\": 3\n    }\n  ]\n}"
+  },
+  {
+   "seq": 64,
+   "tool": "set_parameter",
+   "arguments": {
+    "name": "width",
+    "value": 100,
+    "unit": "mm"
+   },
+   "reply_is_error": false,
+   "reply_text": "{\n  \"display_value\": 100.0,\n  \"errors\": [],\n  \"expression\": \"100\",\n  \"name\": \"width\",\n  \"recomputed\": 4,\n  \"restored\": 0,\n  \"value\": 100.0\n}"
+  }
+ ]
+}

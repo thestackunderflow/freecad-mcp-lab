@@ -1,0 +1,318 @@
+[
+ {
+  "seq": 16,
+  "reply": {
+   "completed": 0,
+   "failed": {
+    "command": "set_parameter",
+    "error": "unknown command `set_parameter`",
+    "index": 0
+   },
+   "ok": false,
+   "results": [],
+   "rolled_back": true,
+   "undone": 0
+  }
+ },
+ {
+  "seq": 18,
+  "reply": {
+   "display_value": 80.0,
+   "errors": [],
+   "expression": "80",
+   "name": "width",
+   "recomputed": 0,
+   "restored": 0,
+   "value": 80.0
+  }
+ },
+ {
+  "seq": 20,
+  "reply": {
+   "completed": 3,
+   "failed": {
+    "command": "sketch.circle.center",
+    "error": "invalid parameters for `sketch.circle.center`: a point must be [x, y], a point id like \"l1.end\", or {at, ref}",
+    "index": 3
+   },
+   "ok": false,
+   "results": [
+    {
+     "bodies": [
+      "Bracket"
+     ],
+     "changed_bodies": [],
+     "created_bodies": [
+      "Bracket"
+     ],
+     "feature": 1,
+     "ms": 3.608522,
+     "name": "Box1",
+     "removed_bodies": [],
+     "warning": null
+    },
+    {
+     "bodies": [
+      "Bracket"
+     ],
+     "changed_bodies": [
+      "Bracket"
+     ],
+     "created_bodies": [],
+     "feature": 2,
+     "ms": 32.417789,
+     "name": "Box2",
+     "removed_bodies": [],
+     "warning": null
+    },
+    {
+     "attachment": "fixed",
+     "created": {
+      "constraints": [],
+      "curves": [],
+      "dimensions": [],
+      "points": []
+     },
+     "name": "Sketch1",
+     "projected": null,
+     "sketch": 3
+    }
+   ],
+   "rolled_back": true,
+   "undone": 3
+  }
+ },
+ {
+  "seq": 22,
+  "reply": {
+   "completed": 5,
+   "ok": true,
+   "results": [
+    {
+     "bodies": [
+      "Bracket"
+     ],
+     "changed_bodies": [],
+     "created_bodies": [
+      "Bracket"
+     ],
+     "feature": 1,
+     "ms": 3.608522,
+     "name": "Box1",
+     "removed_bodies": [],
+     "warning": null
+    },
+    {
+     "bodies": [
+      "Bracket"
+     ],
+     "changed_bodies": [
+      "Bracket"
+     ],
+     "created_bodies": [],
+     "feature": 2,
+     "ms": 32.417789,
+     "name": "Box2",
+     "removed_bodies": [],
+     "warning": null
+    },
+    {
+     "attachment": "fixed",
+     "created": {
+      "constraints": [],
+      "curves": [],
+      "dimensions": [],
+      "points": []
+     },
+     "name": "Sketch1",
+     "projected": null,
+     "sketch": 3
+    },
+    {
+     "constraints": [],
+     "created": {
+      "constraints": [],
+      "curves": [
+       "c1"
+      ],
+      "dimensions": [],
+      "points": [
+       "c1.center"
+      ]
+     },
+     "curves": [
+      "c1"
+     ],
+     "sketch": {
+      "dof": 3,
+      "solved": true
+     }
+    },
+    {
+     "constraints": [],
+     "created": {
+      "constraints": [],
+      "curves": [
+       "c2"
+      ],
+      "dimensions": [],
+      "points": [
+       "c2.center"
+      ]
+     },
+     "curves": [
+      "c2"
+     ],
+     "sketch": {
+      "dof": 6,
+      "solved": true
+     }
+    }
+   ]
+  }
+ },
+ {
+  "seq": 26,
+  "reply": {
+   "completed": 5,
+   "ok": true,
+   "results": [
+    {
+     "created": {
+      "constraints": [],
+      "curves": [],
+      "dimensions": [
+       "k1"
+      ],
+      "points": []
+     },
+     "expression": "5",
+     "measured": 5.0,
+     "param": "d7",
+     "sketch": {
+      "dof": 5,
+      "solved": true
+     },
+     "type": "DiameterDimension",
+     "unit": "mm"
+    },
+    {
+     "created": {
+      "constraints": [],
+      "curves": [],
+      "dimensions": [
+       "k2"
+      ],
+      "points": []
+     },
+     "expression": "5",
+     "measured": 5.0,
+     "param": "d8",
+     "sketch": {
+      "dof": 4,
+      "solved": true
+     },
+     "type": "DiameterDimension",
+     "unit": "mm"
+    },
+    {
+     "created": {
+      "constraints": [],
+      "curves": [],
+      "dimensions": [
+       "k3"
+      ],
+      "points": []
+     },
+     "expression": "40",
+     "measured": 40.0,
+     "param": "d9",
+     "sketch": {
+      "dof": 3,
+      "solved": true
+     },
+     "type": "LinearDimension",
+     "unit": "mm"
+    },
+    {
+     "created": {
+      "constraints": [],
+      "curves": [],
+      "dimensions": [
+       "k4"
+      ],
+      "points": []
+     },
+     "expression": "35",
+     "measured": 35.0,
+     "param": "d10",
+     "sketch": {
+      "dof": 2,
+      "solved": true
+     },
+     "type": "LinearDimension",
+     "unit": "mm"
+    },
+    {
+     "created": {
+      "constraints": [],
+      "curves": [],
+      "dimensions": [
+       "k5"
+      ],
+      "points": []
+     },
+     "expression": "width/2-20",
+     "measured": 20.0,
+     "param": "d11",
+     "sketch": {
+      "dof": 1,
+      "solved": true
+     },
+     "type": "LinearDimension",
+     "unit": "mm"
+    }
+   ]
+  }
+ },
+ {
+  "seq": 30,
+  "reply": {
+   "completed": 3,
+   "ok": true,
+   "results": [
+    {
+     "constraint": "k6",
+     "created": {
+      "constraints": [
+       "k6"
+      ],
+      "curves": [],
+      "dimensions": [],
+      "points": []
+     },
+     "sketch": {
+      "dof": 0,
+      "solved": true
+     }
+    },
+    {
+     "profiles": 2,
+     "sketch": 3
+    },
+    {
+     "bodies": [
+      "Bracket"
+     ],
+     "changed_bodies": [],
+     "created_bodies": [],
+     "feature": 4,
+     "ms": 24.365033,
+     "name": "Extrude1",
+     "removed_bodies": [],
+     "warning": null
+    }
+   ]
+  }
+ }
+]

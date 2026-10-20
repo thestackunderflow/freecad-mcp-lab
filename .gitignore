@@ -1,0 +1,6 @@
+out/lab-out/
+__pycache__/
+# pilot runs that loaded the owner's personal CLAUDE.md: kept locally, never published (README)
+out/runs-pilot-primed/
+out/runs-pilot-primed-2/
+out/annotate-check.png

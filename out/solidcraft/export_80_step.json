@@ -1,0 +1,13 @@
+{
+ "content": [
+  {
+   "text": "{\n  \"bytes\": 15773,\n  \"format\": \"Step\",\n  \"path\": \"/lab/out/ref-solidcraft-80.step\"\n}",
+   "type": "text",
+   "text_parsed": {
+    "bytes": 15773,
+    "format": "Step",
+    "path": "/lab/out/ref-solidcraft-80.step"
+   }
+  }
+ ]
+}

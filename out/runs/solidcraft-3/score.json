@@ -1,0 +1,118 @@
+{
+ "arm": "solidcraft",
+ "run": "3",
+ "model": "claude-sonnet-5-5",
+ "exit": 0,
+ "wall_s": 57,
+ "claude_version": "2.1.303 (Claude Code)",
+ "cost_usd": 0.2379454,
+ "num_turns": 33,
+ "is_error": false,
+ "models_used": [
+  "claude-sonnet-5-5"
+ ],
+ "tool_calls": 31,
+ "tools_used": [
+  "batch",
+  "body_topology",
+  "execute",
+  "export",
+  "inspect_design",
+  "list_commands",
+  "measure",
+  "set_parameter"
+ ],
+ "failed_calls": 2,
+ "failures": [
+  {
+   "seq": 17,
+   "tool": "batch",
+   "text": "{\n  \"completed\": 0,\n  \"failed\": {\n    \"command\": \"set_parameter\",\n    \"error\": \"unknown command `set_parameter`\",\n    \"index\": 0\n  },\n  \"ok\": false,\n  \"results\": [],\n  \"rolled_back\": true,\n  \"undone\": 0\n}"
+  },
+  {
+   "seq": 21,
+   "tool": "batch",
+   "text": "{\n  \"completed\": 3,\n  \"failed\": {\n    \"command\": \"sketch.circle.center\",\n    \"error\": \"invalid parameters for `sketch.circle.center`: a point must be [x, y], a point id like \\\"l1.end\\\", or {at, ref}\",\n    \"index\": 3\n  },\n  \"ok\": false,\n  \"results\": [\n    {\n      \"bodies\": [\n        \"Bracket\"\n      ]"
+  }
+ ],
+ "final_answer": "The bracket is modelled and exported at both widths. All four exports succeeded, and the two holes stayed centred when I changed the width.\n\n| Export | Files | Bounding box (mm) |\n|---|---|---|\n| Width 80 | `/lab/out/bracket-80.step`, `/lab/out/bracket-80.stl` | X 0\u201380, Y 0\u201360, Z 0\u201350 |\n| Width 100 | `/lab/out/bracket-100.step`, `/lab/out/bracket-100.stl` | X 0\u2013100, Y 0\u201360, Z 0\u201350 |\n\n**Model**\n- The `width` parameter drives both plates and the hole positions.\n- The base plate is 60 mm deep and the back plate is 50 mm tall, both 4 mm thick.\n- The two 5 mm holes are 40 mm apart, centred across the width, with centres 35 mm above the bottom. Their X positions are set from `width/2 - 20`.\n\n**Check at width 100:** the hole axes are at X = 30 and 70 (centred on 50), Z = 35, running through Y 0\u20134. The volume removed by the holes is the expected 157 mm\u00b3 (2 \u00d7 \u03c0 \u00d7 2.5\u00b2 \u00d7 4).\n\n**Problems along the way**\n- My first call used a nonexistent tool name, and the first batch was rejected and rolled back because sketch circle centres can't take expressions.\n- The XZ sketch plane's Y axis points toward \u2212Z, so my first holes landed at Z = \u221235. The cut removed nothing, and the volume didn't change. I redrew the circles at sketch Y = \u221235, which put them at Z = +35, and then the cut worked.\n- The two STL files are exactly the same size (20284 bytes). That is expected, because the 80 mm and 100 mm meshes have the same number of triangles. I didn't inspect the STL contents. The STEP files differ in size, as expected.\n\nI didn't save the design as a `.solidcraft` file.",
+ "w80": {
+  "measured": {
+   "width": 80.0,
+   "depth": 60.0,
+   "height": 50.0,
+   "base_thickness": 4.0,
+   "back_thickness": 4.0,
+   "volume": 33764.0504,
+   "triangles": 404,
+   "holes_found": 2,
+   "hole_diameters": [
+    5.0,
+    5.0
+   ],
+   "hole_spacing": 40.0,
+   "hole_height": 35.0,
+   "holes_offset_from_centre": -0.0
+  },
+  "score": {
+   "pass": true,
+   "failures": []
+  }
+ },
+ "w80_step": {
+  "file": "/work/out/runs/solidcraft-3/bracket-80.step",
+  "size": [
+   80.0,
+   60.0,
+   50.0
+  ],
+  "min": [
+   0.0,
+   -0.0,
+   0.0
+  ],
+  "volume": 33762.9204,
+  "solids": 1
+ },
+ "w100": {
+  "measured": {
+   "width": 100.0,
+   "depth": 60.0,
+   "height": 50.0,
+   "base_thickness": 4.0,
+   "back_thickness": 4.0,
+   "volume": 42244.0504,
+   "triangles": 404,
+   "holes_found": 2,
+   "hole_diameters": [
+    5.0,
+    5.0
+   ],
+   "hole_spacing": 40.0,
+   "hole_height": 35.0,
+   "holes_offset_from_centre": 0.0
+  },
+  "score": {
+   "pass": true,
+   "failures": []
+  }
+ },
+ "w100_step": {
+  "file": "/work/out/runs/solidcraft-3/bracket-100.step",
+  "size": [
+   100.0,
+   60.0,
+   50.0
+  ],
+  "min": [
+   0.0,
+   -0.0,
+   0.0
+  ],
+  "volume": 42242.9204,
+  "solids": 1
+ },
+ "change_method": "set_parameter",
+ "pass_80": true,
+ "pass_100": true
+}

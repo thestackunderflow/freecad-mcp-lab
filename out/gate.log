@@ -1,0 +1,20 @@
+[start.sh] FreeCAD RPC up after 2.5 s
+SERVER {"name": "FreeCADMCP", "version": ""} 2025-06-18
+TOOLS 17 ['create_document', 'create_object', 'delete_object', 'edit_object', 'execute_code', 'execute_code_async', 'execute_code_headless', 'get_async_status', 'get_object', 'get_objects', 'get_parts_list', 'get_rpc_status', 'get_view', 'insert_part_from_library', 'list_documents', 'reload_document', 'run_fem_analysis']
+STATUS {
+  "success": true,
+  "rpc_server": "running",
+  "gui_dispatch": {
+    "state": "healthy",
+    "task_id": 0,
+    "operation": "",
+    "running_for_seconds": 0.0,
+    "timeout_seconds": 0.0
+  },
+  "async_jobs_running": [],
+  "addon_version": "0.1.27",
+  "protocol_version": 1,
+  "execute_code_timeout": 90,
+  "max_execute_code_timeout": 1800,
+  "version_check": "ok"
+}

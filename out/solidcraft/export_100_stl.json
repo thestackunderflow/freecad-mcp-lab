@@ -1,0 +1,13 @@
+{
+ "content": [
+  {
+   "text": "{\n  \"bytes\": 20284,\n  \"format\": \"StlBinary\",\n  \"path\": \"/lab/out/ref-solidcraft-100.stl\"\n}",
+   "type": "text",
+   "text_parsed": {
+    "bytes": 20284,
+    "format": "StlBinary",
+    "path": "/lab/out/ref-solidcraft-100.stl"
+   }
+  }
+ ]
+}

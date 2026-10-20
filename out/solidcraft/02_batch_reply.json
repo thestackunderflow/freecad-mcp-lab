@@ -1,0 +1,120 @@
+{
+ "content": [
+  {
+   "text": "{\n  \"completed\": 7,\n  \"ok\": true,\n  \"results\": [\n    {\n      \"display_value\": 80.0,\n      \"errors\": [],\n      \"expression\": \"80 mm\",\n      \"name\": \"width\",\n      \"recomputed\": 0,\n      \"restored\": 0,\n      \"value\": 80.0\n    },\n    {\n      \"attachment\": \"fixed\",\n      \"created\": {\n        \"constraints\": [],\n        \"curves\": [],\n        \"dimensions\": [],\n        \"points\": []\n      },\n      \"name\": \"L profile\",\n      \"projected\": null,\n      \"sketch\": 1\n    },\n    {\n      \"constraints\": [\n        \"k1\"\n      ],\n      \"created\": {\n        \"constraints\": [\n          \"k1\"\n        ],\n        \"curves\": [\n          \"l1\",\n          \"l2\",\n          \"l3\",\n          \"l4\",\n          \"l5\",\n          \"l6\"\n        ],\n        \"dimensions\": [],\n        \"points\": [\n          \"l1.start\",\n          \"l1.end\",\n          \"l2.end\",\n          \"l3.end\",\n          \"l4.end\",\n          \"l5.end\"\n        ]\n      },\n      \"curves\": [\n        \"l1\",\n        \"l2\",\n        \"l3\",\n        \"l4\",\n        \"l5\",\n        \"l6\"\n      ],\n      \"sketch\": {\n        \"dof\": 10,\n        \"solved\": true\n      }\n    },\n    {\n      \"profiles\": 1,\n      \"sketch\": 1\n    },\n    {\n      \"bodies\": [\n        \"Bracket\"\n      ],\n      \"changed_bodies\": [],\n      \"created_bodies\": [\n        \"Bracket\"\n      ],\n      \"feature\": 2,\n      \"ms\": 4.800621,\n      \"name\": \"Extrude1\",\n      \"removed_bodies\": [],\n      \"warning\": null\n    },\n    {\n      \"bodies\": [\n        \"Bracket\"\n      ],\n      \"changed_bodies\": [\n        \"Bracket\"\n      ],\n      \"created_bodies\": [],\n      \"feature\": 3,\n      \"ms\": 33.835761,\n      \"name\": \"Hole1\",\n      \"removed_bodies\": [],\n      \"warning\": null\n    },\n    {\n      \"bodies\": [\n        \"Bracket\"\n      ],\n      \"changed_bodies\": [\n        \"Bracket\"\n      ],\n      \"created_bodies\": [],\n      \"feature\": 4,\n      \"ms\": 35.780552,\n      \"name\": \"Hole2\",\n      \"removed_bodies\": [],\n      \"warning\": null\n    }\n  ]\n}",
+   "type": "text",
+   "text_parsed": {
+    "completed": 7,
+    "ok": true,
+    "results": [
+     {
+      "display_value": 80.0,
+      "errors": [],
+      "expression": "80 mm",
+      "name": "width",
+      "recomputed": 0,
+      "restored": 0,
+      "value": 80.0
+     },
+     {
+      "attachment": "fixed",
+      "created": {
+       "constraints": [],
+       "curves": [],
+       "dimensions": [],
+       "points": []
+      },
+      "name": "L profile",
+      "projected": null,
+      "sketch": 1
+     },
+     {
+      "constraints": [
+       "k1"
+      ],
+      "created": {
+       "constraints": [
+        "k1"
+       ],
+       "curves": [
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6"
+       ],
+       "dimensions": [],
+       "points": [
+        "l1.start",
+        "l1.end",
+        "l2.end",
+        "l3.end",
+        "l4.end",
+        "l5.end"
+       ]
+      },
+      "curves": [
+       "l1",
+       "l2",
+       "l3",
+       "l4",
+       "l5",
+       "l6"
+      ],
+      "sketch": {
+       "dof": 10,
+       "solved": true
+      }
+     },
+     {
+      "profiles": 1,
+      "sketch": 1
+     },
+     {
+      "bodies": [
+       "Bracket"
+      ],
+      "changed_bodies": [],
+      "created_bodies": [
+       "Bracket"
+      ],
+      "feature": 2,
+      "ms": 4.800621,
+      "name": "Extrude1",
+      "removed_bodies": [],
+      "warning": null
+     },
+     {
+      "bodies": [
+       "Bracket"
+      ],
+      "changed_bodies": [
+       "Bracket"
+      ],
+      "created_bodies": [],
+      "feature": 3,
+      "ms": 33.835761,
+      "name": "Hole1",
+      "removed_bodies": [],
+      "warning": null
+     },
+     {
+      "bodies": [
+       "Bracket"
+      ],
+      "changed_bodies": [
+       "Bracket"
+      ],
+      "created_bodies": [],
+      "feature": 4,
+      "ms": 35.780552,
+      "name": "Hole2",
+      "removed_bodies": [],
+      "warning": null
+     }
+    ]
+   }
+  }
+ ]
+}

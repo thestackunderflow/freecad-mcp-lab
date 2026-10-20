@@ -1,0 +1,100 @@
+{
+ "arm": "freecad",
+ "run": "3",
+ "model": "claude-sonnet-5-5",
+ "exit": 0,
+ "wall_s": 17,
+ "claude_version": "2.1.303 (Claude Code)",
+ "cost_usd": 0.025201,
+ "num_turns": 2,
+ "is_error": false,
+ "models_used": [
+  "claude-sonnet-5-5"
+ ],
+ "tool_calls": 1,
+ "tools_used": [
+  "execute_code"
+ ],
+ "failed_calls": 0,
+ "failures": [],
+ "final_answer": "I built the bracket and exported all four files without any failures. The width is a `Width` cell in a `Params` spreadsheet, so changing it moves the holes with it.\n\n| | Bounding box (X \u00d7 Y \u00d7 Z) | Hole centres (X) | Volume |\n|---|---|---|---|\n| **Width 80 mm** | 0\u201380 \u00d7 0\u201360 \u00d7 0\u201350 | 20 and 60 | 33,763 mm\u00b3 |\n| **Width 100 mm** | 0\u2013100 \u00d7 0\u201360 \u00d7 0\u201350 | 30 and 70 | 42,243 mm\u00b3 |\n\n- **Holes:** At both widths the two 5 mm holes are 40 mm apart, centred across the width, 35 mm above the bottom, and cut through the 4 mm back plate. Each hole's bounding box spans Y 0\u20134 and Z 32.5\u201337.5.\n- **Volume check:** The 80 mm volume matches a hand calculation of the two plates minus the holes. The model is a valid solid at both widths.\n- **Files:** `/lab/out/bracket-80.step`, `/lab/out/bracket-80.stl`, `/lab/out/bracket-100.step` and `/lab/out/bracket-100.stl` are all in `/lab/out`.\n- **Y minimum:** The bounding box reports Y starting at about \u22125.5e-16 instead of exactly 0. That is floating-point noise from the hole cylinders' rotation, not a real offset.",
+ "w80": {
+  "measured": {
+   "width": 80.0,
+   "depth": 60.0,
+   "height": 50.0,
+   "base_thickness": 4.0,
+   "back_thickness": 4.0,
+   "volume": 33762.9855,
+   "triangles": 1036,
+   "holes_found": 2,
+   "hole_diameters": [
+    5.0,
+    5.0
+   ],
+   "hole_spacing": 40.0,
+   "hole_height": 35.0,
+   "holes_offset_from_centre": -0.0
+  },
+  "score": {
+   "pass": true,
+   "failures": []
+  }
+ },
+ "w80_step": {
+  "file": "/work/out/runs/freecad-3/bracket-80.step",
+  "size": [
+   80.0,
+   60.0,
+   50.0
+  ],
+  "min": [
+   0.0,
+   -0.0,
+   0.0
+  ],
+  "volume": 33762.9204,
+  "solids": 1
+ },
+ "w100": {
+  "measured": {
+   "width": 100.0,
+   "depth": 60.0,
+   "height": 50.0,
+   "base_thickness": 4.0,
+   "back_thickness": 4.0,
+   "volume": 42242.9855,
+   "triangles": 1036,
+   "holes_found": 2,
+   "hole_diameters": [
+    5.0,
+    5.0
+   ],
+   "hole_spacing": 40.0,
+   "hole_height": 35.0,
+   "holes_offset_from_centre": -0.0
+  },
+  "score": {
+   "pass": true,
+   "failures": []
+  }
+ },
+ "w100_step": {
+  "file": "/work/out/runs/freecad-3/bracket-100.step",
+  "size": [
+   100.0,
+   60.0,
+   50.0
+  ],
+  "min": [
+   0.0,
+   -0.0,
+   0.0
+  ],
+  "volume": 42242.9204,
+  "solids": 1
+ },
+ "change_method": "spreadsheet parameter set, then recompute (heuristic; checked by reading the code)",
+ "pass_80": true,
+ "pass_100": true
+}

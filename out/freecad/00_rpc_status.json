@@ -1,0 +1,17 @@
+{
+ "success": true,
+ "rpc_server": "running",
+ "gui_dispatch": {
+  "state": "healthy",
+  "task_id": 0,
+  "operation": "",
+  "running_for_seconds": 0.0,
+  "timeout_seconds": 0.0
+ },
+ "async_jobs_running": [],
+ "addon_version": "0.1.27",
+ "protocol_version": 1,
+ "execute_code_timeout": 90,
+ "max_execute_code_timeout": 1800,
+ "version_check": "ok"
+}

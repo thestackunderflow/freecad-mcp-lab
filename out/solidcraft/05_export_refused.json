@@ -1,0 +1,9 @@
+{
+ "content": [
+  {
+   "text": "/lab/out/../forbidden/x.step: /lab/out/../forbidden/x.step: outside the folders this agent may use (/root/.local/share/solidcraft/recovery, /tmp/solidcraft-mcp-7-13bfdee1, /lab/out); allow another folder with `--allow-path DIR`",
+   "type": "text"
+  }
+ ],
+ "isError": true
+}

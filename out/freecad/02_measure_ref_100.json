@@ -1,0 +1,23 @@
+{
+ "measured": {
+  "width": 100.0,
+  "depth": 60.0,
+  "height": 50.0,
+  "base_thickness": 4.0,
+  "back_thickness": 4.0,
+  "volume": 42242.9367,
+  "triangles": 2044,
+  "holes_found": 2,
+  "hole_diameters": [
+   5.0,
+   5.0
+  ],
+  "hole_spacing": 40.0,
+  "hole_height": 35.0,
+  "holes_offset_from_centre": -0.0
+ },
+ "score": {
+  "pass": true,
+  "failures": []
+ }
+}
